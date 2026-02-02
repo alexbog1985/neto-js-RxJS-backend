@@ -1,5 +1,6 @@
 import express from 'express';
 import { faker } from '@faker-js/faker';
+import cors from 'cors';
 
 const app = express();
 
@@ -19,6 +20,12 @@ function generateUnreadMessages(count = 5) {
   }
   return messages;
 }
+
+app.use(cors({
+  origin: ['http://localhost:8080', 'http://127.0.0.1:8080'],
+  methods: ['GET'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
 
 app.get('/messages/unread', (req, res) => {
   try {
