@@ -22,7 +22,7 @@ function generateUnreadMessages(count = 5) {
 }
 
 app.use(cors({
-  origin: ['http://localhost:8080', 'http://127.0.0.1:8080'],
+  origin: ['*'],
   methods: ['GET'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
