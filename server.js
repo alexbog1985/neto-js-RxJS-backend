@@ -22,7 +22,11 @@ function generateUnreadMessages(count = 5) {
 }
 
 app.use(cors({
-  origin: ['*'],
+  origin: [    
+    'https://alexbog1985.github.io',
+    'http://localhost:8080',
+    'http://127.0.0.1:8080'
+  ],
   methods: ['GET'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
